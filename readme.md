@@ -23,4 +23,6 @@ Phone: 312-942-3146
 
 ## License
 
+[MIT License](./license.md)
 
+Copyright (c) 2023 Pranav Kumar Mishra
