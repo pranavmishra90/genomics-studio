@@ -1,13 +1,13 @@
 version: '2'
 services:
-  tidyverse:
-    container_name: RStudio-tidyverse
+  genomics-studio:
+    container_name: Genomics-Studio
     restart: unless-stopped
     environment:
       - PASSWORD=spagnolilab
     ports:
       - '9119:8787'
-    image: rocker/tidyverse
+    image: pranavmishra90/genomics-studio-base:latest
     volumes:
       - /home/pranav/work:/home/rstudio/workspace/work
       - /home/pranav/.ssh/id_ed25519:/home/rstudio/.ssh/id_ed25519:ro
