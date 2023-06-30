@@ -1,13 +1,24 @@
 version: '2'
+
+networks:
+  default:
+    driver: bridge
+  tailscale:
+    external: true
+
 services:
   genomics-studio:
     container_name: Genomics-Studio
     restart: unless-stopped
     environment:
-      - PASSWORD=spagnolilab
+      - PASSWORD=$PASSWORD
+      - TAILSCALE_KEY=$TAILSCALE
+    networks:
+      - default
+      - tailscale
     ports:
       - '9119:8787'
     image: pranavmishra90/genomics-studio-base:latest
     volumes:
       - /home/pranav/work:/home/rstudio/workspace/work
-      - /home/pranav/.ssh/id_ed25519:/home/rstudio/.ssh/id_ed25519:ro
+      # - /home/pranav/.ssh/id_ed25519:/home/rstudio/.ssh/id_ed25519:ro
