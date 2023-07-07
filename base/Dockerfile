@@ -1,7 +1,7 @@
 FROM rocker/tidyverse:4.3.0
 
 #########################
-ARG IMAGE_VERSION="0.0.5"
+ARG IMAGE_VERSION="0.0.6"
 #########################
 
 LABEL org.opencontainers.image.title="R-Studio for Seurat"
@@ -26,6 +26,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libhdf5-dev \
     libcurl4-openssl-dev \
     libssl-dev \
+    libsodium-dev \
     libpng-dev \
     libboost-all-dev \
     libxml2-dev \
